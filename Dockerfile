@@ -9,4 +9,8 @@ RUN \
 
 FROM alpine
 COPY --from=builder /go/hugo/hugo /bin/hugo
+RUN \
+	apk add --no-cache libstdc++ && \
+	rm -rf /var/cache/apk/*
+
 ENTRYPOINT ["/bin/hugo"]
