@@ -1,5 +1,5 @@
-FROM golang:1-alpine as builder
-ENV HUGOVERSION 0.57.2
+FROM golang:alpine as builder
+ENV HUGOVERSION 0.59.1
 RUN \
 	apk add build-base git && \
 	git clone -b v${HUGOVERSION} https://github.com/gohugoio/hugo.git && \
